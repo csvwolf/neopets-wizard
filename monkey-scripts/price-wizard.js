@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         Neopets Price Wizard
-// @namespace    https://codesky.me
-// @version      0.1
+// @namespace    https://github.com/csvwolf/neopets-wizard
+// @version      1.0
 // @description  Price Wizard To Get the Recommended Retail Price
 // @author       SkyAo
 // @match        http://www.neopets.com/*
+// @license      MIT
+// @supportURL   https://github.com/csvwolf/neopets-wizard/issues
 // @grant        none
 // ==/UserScript==
 
@@ -39,7 +41,7 @@
                     const priceString = data.price
                     const price = npToNumber(priceString)
                     if (reward > price * itemNumber && minute >= 40 && reward > 3000) {
-                        // 推荐色
+                        // Recommend Color
                         node.style = "background-color: rgb(201 255 233);"
                     }
 
@@ -63,7 +65,7 @@
                     const priceString = data.price
                     const price = npToNumber(priceString)
                     if (sellPrice < price) {
-                        // 推荐色
+                        // Recommend Color
                         node.style = "background-color: rgb(201 255 233);"
                     }
 
