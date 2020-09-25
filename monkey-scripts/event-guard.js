@@ -13,7 +13,7 @@
 // ==/UserScript==
 
 (function() {
-    'use strict';
+    'use strict'
     const notice = function (ok, word, reloadInterval) {
         if (ok) {
             let shaking = false
@@ -52,4 +52,4 @@
         const notHere = document.querySelector('.content').innerText.includes(`Oops`)
         notice(!notHere, 'Attic has stocks', 10000)
     }
-})();
+})()
