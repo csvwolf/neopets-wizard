@@ -11,8 +11,7 @@
 // ==/UserScript==
 
 (function() {
-    'use strict'
-    // avoid to block user account, pls submit by yourself
-    document.querySelector('#content > table > tbody > tr > td.content > center > form > input[type=text]').value = [...document.querySelectorAll('#content > table > tbody > tr > td.content > table td')].filter(td => td.querySelector('img')).length
+  'use strict'
+  // avoid to block user account, pls submit by yourself
+  document.querySelector('#content > table > tbody > tr > td.content > center > form > input[type=text]').value = [...document.querySelectorAll('#content > table > tbody > tr > td.content > table td')].filter(td => td.querySelector('img')).length
 })()
-
