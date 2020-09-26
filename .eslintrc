@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "@vue/typescript",
+    "standard"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "vue"
+  ],
+  "rules": {
+    // Add Extra Rules
+    "space-before-function-paren": [2, "never"]
+  }
+}
