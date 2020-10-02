@@ -7,15 +7,18 @@
 </template>
 
 <script>
-export default {
+import { defineComponent, reactive } from 'vue'
+export default defineComponent({
   name: 'HelloWorld',
   props: {
-    msg: String
-  },
-  data() {
-    return {
-      count: 1
+    msg: {
+      type: String,
+      required: true
     }
+  },
+  setup() {
+    const state = reactive({ count: 1 })
+    return state
   }
-}
+})
 </script>
