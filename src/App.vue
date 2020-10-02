@@ -1,18 +1,28 @@
 <template>
-  <img
-    alt="Vue logo"
-    src="./assets/logo.png"
-  >
-  <HelloWorld msg="Hello Neopets" />
+  <div>
+    <navbar v-if="showNavbar" />
+    <router-view />
+  </div>
 </template>
-
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent, computed, ComputedRef } from 'vue'
+import Navbar from '@/components/Navbar.vue'
+import { useRoute } from 'vue-router'
+
+interface SetupResult {
+  showNavbar: ComputedRef<boolean>
+}
+
 export default defineComponent({
-  name: 'App',
   components: {
-    HelloWorld
+    Navbar
+  },
+  setup(): SetupResult {
+    const route = useRoute()
+    const showNavbar = computed(() => route.path !== '/')
+    return {
+      showNavbar
+    }
   }
 })
 </script>
