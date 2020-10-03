@@ -53,18 +53,18 @@ export default defineComponent({
   border-bottom: 1px solid #ccc;
   height: 48px;
   line-height: 48px;
-}
 
-.navbar__title {
-  margin: 0 16px;
-  line-height: 48px;
-}
+  &__title {
+    margin: 0 16px;
+    line-height: 48px;
+  }
 
-.navbar__title_link {
-  color: #137cbd;
-}
+  &__title_link {
+    color: #137cbd;
+  }
 
-.navbar__item {
-  padding: 0 8px;
+  &__item {
+    padding: 0 8px;
+  }
 }
 </style>
