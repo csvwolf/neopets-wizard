@@ -11,9 +11,8 @@
 </template>
 <style scoped lang="postcss">
 .card {
-  width: 200px;
-  height: 80px;
   display: inline-block;
+  flex: 1 1 auto;
 
   &__img {
     width: 100px;
