@@ -1,7 +1,10 @@
 <template>
   <div>
-    <ul>
-      <li>
+    <ul class="daily__list">
+      <li
+        class="daily__item"
+        @click="runAutoBlueGrundoGift"
+      >
         <card
           :image="blueGrundo"
           title="Blue Grundo"
@@ -14,6 +17,7 @@
 import { defineComponent } from 'vue'
 import Card from '@components/Card.vue'
 import BlueGrundo from '@/assets/daily/blue-grundo.gif'
+import { runAutoBlueGrundoGift } from '@/services/daily'
 
 export default defineComponent({
   components: {
@@ -21,8 +25,22 @@ export default defineComponent({
   },
   setup() {
     return {
-      blueGrundo: BlueGrundo
+      blueGrundo: BlueGrundo,
+      runAutoBlueGrundoGift
     }
   }
 })
 </script>
+<style scoped lang="postcss">
+.daily {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    cursor: pointer;
+  }
+}
+</style>
