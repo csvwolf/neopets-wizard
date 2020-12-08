@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="daily">
     <ul class="daily__list">
       <li
         class="daily__item"
-        @click="runAutoBlueGrundoGift"
       >
         <card
           :image="blueGrundo"
           title="Blue Grundo"
+          @buttonClick="runAutoBlueGrundoGift"
         />
       </li>
     </ul>
