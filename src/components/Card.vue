@@ -1,31 +1,24 @@
 <template>
-  <section class="card">
+  <el-card class="card">
     <img
-      class="card__img"
       :src="image"
+      class="image"
+      :alt="title"
     >
-    <div class="card__title">
-      {{ title }}
+    <div>
+      <div>{{ title }}</div>
+      <el-button
+        type="text"
+        class="button"
+        @click="clickButton"
+      >
+        走一个
+      </el-button>
     </div>
-  </section>
+  </el-card>
 </template>
-<style scoped lang="postcss">
-.card {
-  display: inline-block;
-  flex: 1 1 auto;
-
-  &__img {
-    width: 100px;
-    height: auto;
-  }
-
-  &__title {
-    font-size: 16px;
-  }
-}
-</style>
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, SetupContext } from 'vue'
 
 export default defineComponent({
   props: {
@@ -37,6 +30,20 @@ export default defineComponent({
       type: String,
       required: true
     }
+  },
+  emits: ['buttonClick'],
+  setup(props, { emit }: SetupContext) {
+    const clickButton = () => {
+      emit('buttonClick')
+    }
+    return {
+      clickButton
+    }
   }
 })
 </script>
+<style scoped lang="postcss">
+.card {
+  width: 200px;
+}
+</style>

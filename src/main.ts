@@ -1,8 +1,7 @@
-import { createApp, App as VueApp } from 'vue'
+import { createApp } from 'vue'
 import * as VueRouter from 'vue-router'
-
-import Navbar from '@components/common/navbar'
-import Button from '@components/common/button'
+import ElementPlus from 'element-plus'
+import 'element-plus/lib/theme-chalk/index.css'
 
 import App from './App.vue'
 import routes from './routes'
@@ -13,13 +12,8 @@ const router = VueRouter.createRouter({
   routes
 })
 
-const install = (app: VueApp): void => {
-  Navbar(app)
-  Button(app)
-}
-
 const app = createApp(App)
-install(app)
-
 app.use(router)
+app.use(ElementPlus)
+
 app.mount('#app')
