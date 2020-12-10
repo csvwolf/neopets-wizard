@@ -32,7 +32,7 @@ export default defineComponent({
     }
   },
   emits: ['buttonClick'],
-  setup(props, { emit }: SetupContext) {
+  setup(_, { emit }: SetupContext) {
     const clickButton = () => {
       emit('buttonClick')
     }
