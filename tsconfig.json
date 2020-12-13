@@ -10,11 +10,14 @@
     "experimentalDecorators": true,
     "lib": ["dom", "esnext"],
     "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
     "paths": {
-      "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"]
-    }
+      "@pages/*": ["src/pages/*"],
+      "@assets/*": ["src/assets/*"],
+      "@/*": ["src/*"]
+    },
+    "typeRoots" : ["node_modules/@types", "./typings"]
   },
   "exclude": ["node_modules", "dist"]
 }
