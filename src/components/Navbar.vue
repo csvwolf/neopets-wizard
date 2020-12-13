@@ -40,6 +40,12 @@ export default defineComponent({
     const routes: SetupResult['routes'] = [{
       title: 'Daily Tasks',
       path: '/daily'
+    }, {
+      title: 'Clocking Runner',
+      path: '/clocking'
+    }, {
+      title: 'Price Magician',
+      path: '/price'
     }]
     const openSettings = () => {
       ElMessageBox.prompt(
