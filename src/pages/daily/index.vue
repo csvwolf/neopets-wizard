@@ -34,14 +34,15 @@ export default defineComponent({
 <style scoped lang="postcss">
 .daily {
   &__list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   &__item {
-    cursor: pointer;
-    margin: 0 16px;
+    display: flex;
+    justify-content: center;
+    flex-grow: 2;
+    margin: 16px;
   }
 }
 </style>
