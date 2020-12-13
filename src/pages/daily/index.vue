@@ -2,12 +2,14 @@
   <div class="daily">
     <ul class="daily__list">
       <li
+        v-for="item in dailyItems"
+        :key="item.title"
         class="daily__item"
       >
         <card
-          :image="blueGrundo"
-          title="Blue Grundo"
-          @buttonClick="runAutoBlueGrundoGift"
+          :image="item.image"
+          :title="item.title"
+          @buttonClick="item.action"
         />
       </li>
     </ul>
@@ -16,8 +18,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Card from '@components/Card.vue'
-import BlueGrundo from '@/assets/daily/blue-grundo.gif'
-import { runAutoBlueGrundoGift } from '@/services/daily'
+import DAILY_ITEMS from './daily'
 
 export default defineComponent({
   components: {
@@ -25,8 +26,7 @@ export default defineComponent({
   },
   setup() {
     return {
-      blueGrundo: BlueGrundo,
-      runAutoBlueGrundoGift
+      dailyItems: DAILY_ITEMS
     }
   }
 })
@@ -41,6 +41,7 @@ export default defineComponent({
 
   &__item {
     cursor: pointer;
+    margin: 0 16px;
   }
 }
 </style>
